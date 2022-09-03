@@ -20,3 +20,9 @@ $ python3 fetch.py
 #Run simulation
 python3 simulate_battery.py
 ```
+
+Output with 360 days data fetched at 3.9.2022
+
+Maximum continuous output found
+Hydrogen plant size: 340MW
+Excess hydrogen at end of the year: 1191GWh
