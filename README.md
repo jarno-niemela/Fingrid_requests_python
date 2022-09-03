@@ -1,15 +1,22 @@
-# Fingrid_requests_python
+# Wind+Hydrogen storage simulation
 
-A simple script offering a ready mean to access the real time data
-from the finnish transmission system operator, Fingrid.
+A crude símulation of how big stable output wind power backed by hydrogen power plant could provide in Finland
+based on Fingrid open data.
+
+Hydrogen power storage round trip efficiency of 40% based on 
+https://pv-magazine-usa.com/2020/07/03/nrel-study-backs-hydrogen-for-long-duration-storage/
+
+NOTE: Do get API key from Fingrid
+
+Data fetching brutally ripped from. This is not a clean fork, do not merge back :)
+https://github.com/aHertsberg/Fingrid_requests_python
 
 -----
 ## Example command and output
 ```
-$ python3 fetch.py -e 2021-07-23 -d 7
-Absolute production GWh:
-{'Combined heat and power': 36.39, 'Hydro': 162.8, 'Industrial CHP': 181.69, 'Nuclear': 456.02, 'Other': 5.37, 'Solar, forecasted': 17.94, 'Wind': 196.35}
-Percentage of total power produced in Finland
-{'Combined heat and power': 3.4, 'Hydro': 15.4, 'Industrial CHP': 17.2, 'Nuclear': 43.2, 'Other': 0.5, 'Solar, forecasted': 1.7, 'Wind': 18.6}
+#Fetch raw data, which is stored in data.json
+$ python3 fetch.py
+
+#Run simulation
+python3 simulate_battery.py
 ```
-![example](Production_20210723.png)
