@@ -7,10 +7,16 @@ def simulate_battery(events, specs):
   print("Simulating with plant size %d"%specs["plant_size"])
 
   #Process each 3 minute slice, adding or subtracting from storage, so that plant maximum output is reached
-  #Bail out if storage goes negative
+
   for generated_power in events:
-    specs["storage"]=specs["storage"]+(generated_power*0.4 - specs["plant_size"])
+    if generated_power< specs["plant_size"]:
+      #Consume power from storage
+      specs["storage"] = specs["storage"] + (generated_power - specs["plant_size"])
+    else:
+      #Store excess to storage
+      specs["storage"] = specs["storage"] + (generated_power-specs["plant_size"]) * 0.4
     if specs["storage"]<0:
+      # Bail out if storage goes negative
       return specs["storage"]
   else:
     #Return the surplus at end of the year
