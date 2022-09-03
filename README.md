@@ -8,8 +8,10 @@ https://pv-magazine-usa.com/2020/07/03/nrel-study-backs-hydrogen-for-long-durati
 
 NOTE: Do get API key from Fingrid
 
-Data fetching brutally ripped from. This is not a clean fork, do not merge back :)
+Data fetching brutally ripped from. 
 https://github.com/aHertsberg/Fingrid_requests_python
+
+This is not a clean fork, do not merge back :)
 
 -----
 ## Example command and output
